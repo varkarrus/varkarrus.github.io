@@ -138,10 +138,10 @@ function loadHeightWeightTypes(){
 	heighttypes.push({name:"very short",minmult:0.80,maxmult:0.93,randweight:0.4,unnatural:false});
 	heighttypes.push({name:"tall",minmult:1.03,maxmult:1.10,randweight:0.8,unnatural:false});
 	heighttypes.push({name:"very tall",minmult:1.10,maxmult:1.3,randweight:0.4,unnatural:false});
-	heighttypes.push({name:"unnaturally short",minmult:0.2,maxmult:0.8,randweight:0.25,unnatural:true});
-	heighttypes.push({name:"unnaturally tall",minmult:1.3,maxmult:1.85,randweight:0.25,unnatural:true});
-	heighttypes.push({name:"miniscule",minmult:0,maxmult:0.2,randweight:0.1,unnatural:true});
-	heighttypes.push({name:"colossal",minmult:1.85,maxmult:5,randweight:0.1,unnatural:true});	
+	heighttypes.push({name:"unnaturally short",minmult:0.2,maxmult:0.8,randweight:0.35,unnatural:true});
+	heighttypes.push({name:"unnaturally tall",minmult:1.3,maxmult:1.85,randweight:0.35,unnatural:true});
+	heighttypes.push({name:"miniscule",minmult:0,maxmult:0.2,randweight:0.2,unnatural:true});
+	heighttypes.push({name:"colossal",minmult:1.85,maxmult:5,randweight:0.2,unnatural:true});	
 	
 	weighttypes.push({name:"",minmult:0.94,maxmult:1.06,randweight:3,unnatural:false});
 	weighttypes.push({name:"chubby",minmult:1.06,maxmult:1.12,randweight:0.8,unnatural:false});
@@ -182,7 +182,7 @@ function loadFeatures(){
 	else{
 	features.push({name:getRandom(["missing horn","big horns","small horns","curly horns","four horns"]),randweight:4,vis:0,unnatural:false});
 	}
-	if(race.name!="cyclops"){
+	if(race.name.includes("cyclops")==false){
 		features.push({name:"extra eye",randweight:0.5,vis:0,unnatural:true})
 		features.push({name:"glowing eyes",randweight:0.5,vis:1,unnatural:true})
 		}
@@ -550,10 +550,10 @@ function loadCombat(){
 			weapons.push({name:"an experimental gun",randweight:2})
 		}
 		
-	if(race.name=="gorgon"){
+	if(race.name.includes("gorgon")){
 	abilities.push({name:"petrification",randweight:10})
 	}
-	if(race.name=="cyclops" && Math.random()*100>50){
+	if(race.name.includes("cyclops") && Math.random()*100>50){
 	abilities.push({name:"enhanced perception",randweight:10})
 	abilities.push({name:"future vision",randweight:10})
 	}
@@ -584,7 +584,35 @@ function listFixer(string){
 	}
 return string;
 }
-		
+
+function generateRace(){
+	if (Math.random() < 0.5) {
+  race = races[0];
+} else {
+	
+	if(Math.random()<0.8){
+  race = getArrayRandom(races);
+  
+	}
+	else{
+		var race1 = getArrayRandom(races);
+		var race2;
+		if(Math.random()>0.75){
+		do{race2 = getArrayRandom(races)}while(race2==race1)
+		}else{race2 = races[0];}
+	
+		race.name = "half-"+race1.name; if(race2.name!="human"){race.name+=" half-"+race2.name}
+		race.height = (race1.height+race2.height)/2
+		race.weight = (race1.weight+race2.weight)/2
+		race.haslegs = (race1.haslegs && race2.haslegs)
+		race.hashair = (race1.hashair || race2.hashair)
+		race.hashorns = (race1.hashorns || race2.hashorns)
+	}
+	
+  };
+	if (race.name.includes("demon")){unnatural=true;}
+}
+
 function generateCombat(){
 	string=""
 	if (combat==true || Math.random()*100>70){
@@ -607,7 +635,7 @@ function generateCombat(){
 		if(abilities.length>0){
 			var t3 = getArrayRandom(abilities)
 			var t4 = null;
-			abilities.splice(abilities.indexOf(t1),1);
+			abilities.splice(abilities.indexOf(t3),1);
 			
 			if(abilities.length>0){
 			do{
@@ -656,7 +684,7 @@ function generateFeatures(){
 		unnatural=t.unnatural
 		if(t.combat==true){combat=true}
 		}
-		if(race.name!="futakuchi-onna"){
+		if(race.name.includes("futakuchi-onna")==false){
 	if(Math.random()*100>70 && race.hashair==true){featurecount--;hair=generateHair(true);}
 		if(Math.random()*100>90 && race.hashair==false){featurecount--;hair=generateHair(false)+ " (wig)"}}
 	
@@ -750,12 +778,12 @@ function nagaHeight(inches){
 }
 function stringHeight(inches) {
 	var feet = 0;
-  if (inches > 12 || race.name=="naga") {
+  if (inches > 12 || race.name.includes("naga")) {
     inches = Math.round(inches);
 	for(feet = 0;inches>=12;feet++){
 		inches-=12;
 	}
-	if(race.name=="naga"){
+	if(race.name.includes("naga")){
 		return feet+"'"+inches+'"'+nagaHeight(feet*12+inches);
 	}
 	else{
@@ -873,12 +901,7 @@ loadHobbies();
 loadRaces();
 
 
-if (Math.random() < 0.5) {
-  race = races[0];
-} else {
-  race = getArrayRandom(races);
-  if (race.name=="demon"){unnatural=true;}
-};
+generateRace();
 loadFeatures();
 
 featurestring = generateFeatures();
