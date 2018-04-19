@@ -102,6 +102,9 @@ function loadRaces() {
 	addRace("slime",66,134,true,true,false,0.5);
 	addRace("goblin",41,40,true,true,false,1);
 	addRace("tardigradefolk",66,160,true,false,false,0.2);
+	addRace("futakuchi-onna",66,130,true,true,false,0.5);
+	addRace("yuki-onna",66,130,true,true,false,0.5);
+	addRace("hyakume",70,180,true,true,false,0.5);
 }
 function generateHair(includeBald){
 
@@ -791,11 +794,26 @@ function randGender(){
 	
 	return tempgender;
 }
+function gendIs(){
+	if(gender.includes("male")){return "he is";}
+	if(gender.includes("female")){return "she is";}
+	return "they are";
+}
+function gendHas(){
+	if(gender.includes("male")){return "he has";}
+	if(gender.includes("female")){return "she has";}
+	return "they have";
+}
+
+function generateSummary(){
+	var string="Your character is a "+orientation+" "+gender+" "+race.name;
+	string+=gendHas()+featurestring
+	document.getElementById("Summary").innerHTML = string;
+}
 function randOrientation(){
 	if (gender=="nonbinary"){return getRandom(["androsexual","gynosexual","bi","ace"]);}
 	else{return getRandom(["straight","gay","bi","ace"]);}
 }
-
 var unnatural = false;
 var combat = false;
 var young = false;
@@ -804,27 +822,44 @@ var weighttypes=[];
 var features=[];
 var weapons=[];
 var abilities=[];
-
 var details=[];
-loadAddedDetails();
-var heightmult=1;
-var weightmult=1;
-var bodytype="";
-loadHeightWeightTypes();
 var races = [];
-var gender=randGender();
-var orientation=randOrientation();
-var featurestring;
 var jobs=[];
-
 var hobbies=[];
 var traits=[];
+var race;
+var featurestring;
+function generateChar(){
+	
+unnatural = false;
+combat = false;
+young = false;
+heighttypes=[];
+weighttypes=[];
+features=[];
+weapons=[];
+abilities=[];
+details=[];
+races = [];
+jobs=[];
+hobbies=[];
+traits=[];
+loadAddedDetails();
+heightmult=1;
+weightmult=1;
+bodytype="";
+loadHeightWeightTypes();
+
+gender=randGender();
+orientation=randOrientation();
+featurestring="";
+
 loadTraits();
 loadHobbies();
 
 loadRaces();
 
-var race;
+
 if (Math.random() < 0.5) {
   race = races[0];
 } else {
@@ -852,3 +887,9 @@ weightmult *= Math.pow(heightmult,2.9);
 document.getElementById("BType").innerHTML = "Body Type: "+bodytype+" ("+stringHeight(race.height*heightmult)+", "+stringWeight(race.weight*weightmult)+")";
 document.getElementById("Personality").innerHTML = "Personality: "+generatePersonality();
 document.getElementById("Combat").innerHTML = "Combat: "+generateCombat();
+
+//generateSummary();
+}
+
+document.getElementById("Summary").addEventListener("load", generateChar());
+document.getElementById("generate").onclick = function() {generateChar()};
