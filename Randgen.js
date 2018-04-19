@@ -63,7 +63,7 @@ function loadRaces() {
 	addRace("dwarf",54,105,true,true,false,1);
 	addRace("orc",70,180,true,true,false,1);
 	addRace("fairy",3,0.0122,true,true,false,1);
-	addRace("clone of hollywood superstar Nicholas Cage",72,150,true,true,false,0.05);
+	addRace("clone of hollywood superstar Nicholas Cage",72,150,true,true,false,0.025);
 	addRace("cyclops",267,8580,true,true,false,0.5);
 	addRace("troll",113,632,true,true,true,0.5);
 	addRace("gnome",41,40,true,true,false,1);
@@ -76,7 +76,7 @@ function loadRaces() {
 	addRace("dullahan",66,134,true,true,false,0.5);
 	addRace("drider",78,250,true,true,false,0.2);
 	addRace("angel",66,144,true,true,false,0.5);
-	addRace("reaper",66,64,true,true,false,1);
+	addRace("reaper",66,64,true,true,false,0.2);
 	addRace("demon",70,180,true,true,true,1);
 	addRace("oni",90,314,true,true,true,0.5);
 	addRace("alien",66,134,true,true,false,0.5);
@@ -105,6 +105,8 @@ function loadRaces() {
 	addRace("futakuchi-onna",66,130,true,true,false,0.5);
 	addRace("yuki-onna",66,130,true,true,false,0.5);
 	addRace("hyakume",70,180,true,true,false,0.5);
+	addRace("foocubus",66,134,true,true,false,0.5);
+	addRace("globglogabgalab",66,300,false,false,false,0.025);
 }
 function generateHair(includeBald){
 
@@ -112,8 +114,9 @@ function generateHair(includeBald){
 	if(includeBald){
 		hairs.push("bald","shaved hair");
 	}
-	if(Math.random()*100>90 && unnatural==true)
+	if(Math.random()*100>60 && unnatural==true)
 	{
+		
 		hairs.push("tentacle hair","prehensile hair","flaming hair","crystalline hair","spikes for hair");
 	}
 	hair = getRandom(hairs);
@@ -124,21 +127,21 @@ function generateHair(includeBald){
 	var color2;
 	do {color2 = getRandom(colors);}while(color2==color1);
 	var value = Math.random()*100
-	if (value>97){hair+= " dyed "+color1+" and "+color2;}
-	else if(value>90){hair+=" dyed "+color1;}
+	if (value>95){hair+= " dyed "+color1+" and "+color2;}
+	else if(value>85){hair+=" dyed "+color1;}
 	}
 	return hair;
 }
 function loadHeightWeightTypes(){
 	heighttypes.push({name:"",minmult:0.97,maxmult:1.03,randweight:2,unnatural:false});
 	heighttypes.push({name:"short",minmult:0.93,maxmult:0.97,randweight:0.8,unnatural:false});
-	heighttypes.push({name:"very short",minmult:0.85,maxmult:0.93,randweight:0.4,unnatural:false});
+	heighttypes.push({name:"very short",minmult:0.80,maxmult:0.93,randweight:0.4,unnatural:false});
 	heighttypes.push({name:"tall",minmult:1.03,maxmult:1.10,randweight:0.8,unnatural:false});
-	heighttypes.push({name:"very tall",minmult:1.10,maxmult:1.25,randweight:0.4,unnatural:false});
-	heighttypes.push({name:"unnaturally short",minmult:0.2,maxmult:0.85,randweight:0.25,unnatural:true});
-	heighttypes.push({name:"unnaturally tall",minmult:1.25,maxmult:1.80,randweight:0.25,unnatural:true});
+	heighttypes.push({name:"very tall",minmult:1.10,maxmult:1.3,randweight:0.4,unnatural:false});
+	heighttypes.push({name:"unnaturally short",minmult:0.2,maxmult:0.8,randweight:0.25,unnatural:true});
+	heighttypes.push({name:"unnaturally tall",minmult:1.3,maxmult:1.85,randweight:0.25,unnatural:true});
 	heighttypes.push({name:"miniscule",minmult:0,maxmult:0.2,randweight:0.1,unnatural:true});
-	heighttypes.push({name:"colossal",minmult:1.8,maxmult:4,randweight:0.1,unnatural:true});	
+	heighttypes.push({name:"colossal",minmult:1.85,maxmult:5,randweight:0.1,unnatural:true});	
 	
 	weighttypes.push({name:"",minmult:0.94,maxmult:1.06,randweight:3,unnatural:false});
 	weighttypes.push({name:"chubby",minmult:1.06,maxmult:1.12,randweight:0.8,unnatural:false});
@@ -154,17 +157,17 @@ function loadFeatures(){
 	features.push({name:getRandom(["facial scar","scars","heavily scarred","burn marks","lightning scars"]),randweight:1,vis:1,unnatural:false});
 	features.push({name:getRandom(["old","young"]),randweight:2,vis:0,unnatural:false});
 	if(race.haslegs==true){
-	features.push({name:getRandom(["missing arm","missing leg","uses a wheelchair","uses a cane"]),randweight:1,vis:0,unnatural:false});}
+	features.push({name:getRandom(["missing arm","missing leg","uses a wheelchair","uses a cane"]),randweight:0.2,vis:0,unnatural:false});}
 	else{
 		features.push({name:"missing arm",randweight:1,vis:0,unnatural:false});
 	}
 	features.push({name:"missing a head",randweight:0.3,vis:0,unnatural:true});
 	features.push({name:"extra arms",randweight:0.75,vis:0,unnatural:true});
 	features.push({name:getRandom(["shoulder tattoo","face tattoo","tattoo sleeve","back tattoo"]),randweight:1,vis:1,unnatural:false});
-	features.push({name:getRandom(["prosthetic arm","prosthetic leg"]),randweight:0.5,vis:0,unnatural:false});
+	features.push({name:getRandom(["prosthetic arm","prosthetic leg"]),randweight:0.3,vis:0,unnatural:false});
 	features.push({name:getRandom(["albino","vitiligo","freckled"]),randweight:1,vis:1,unnatural:false});
 	features.push({name:getRandom(["glasses","sunglasses"]),randweight:1,vis:0,unnatural:false});
-	features.push({name:getRandom(["blind","deaf","missing an eye"]),randweight:0.5,vis:0,unnatural:false});
+	features.push({name:getRandom(["blind","deaf","missing an eye"]),randweight:0.3,vis:0,unnatural:false});
 	features.push({name:getRandom(["multiple piercings","pierced lip","earrings","nose ring","tongue piercing"]),randweight:1,vis:1,unnatural:false});
 	features.push({name:"heavy makeup",randweight:1,vis:1,unnatural:false});
 	features.push({name:"invisible",randweight:0.75,vis:-1,unnatural:true});
@@ -179,7 +182,14 @@ function loadFeatures(){
 	else{
 	features.push({name:getRandom(["missing horn","big horns","small horns","curly horns","four horns"]),randweight:4,vis:0,unnatural:false});
 	}
-	if(race.name!="cyclops"){features.push({name:"extra eye",randweight:0.5,vis:0,unnatural:true})};
+	if(race.name!="cyclops"){
+		features.push({name:"extra eye",randweight:0.5,vis:0,unnatural:true})
+		features.push({name:"glowing eyes",randweight:0.5,vis:1,unnatural:true})
+		}
+		else{
+			features.push({name:"glowing eye",randweight:0.5,vis:1,unnatural:true})
+		}
+	features.push({name:"glowing skin",randweight:0.6,vis:1,unnatural:true})
 }
 
 function loadAddedDetails(){
@@ -578,6 +588,7 @@ return string;
 function generateCombat(){
 	string=""
 	if (combat==true || Math.random()*100>70){
+		if(occupationstring.includes("grade schooler")==false && occupationstring.includes("preschooler")==false){
 		string="uses "
 		if(Math.random()*100>65 || abilities.length==0){
 		
@@ -615,6 +626,7 @@ function generateCombat(){
 		
 		
 	}
+	}
 	else{string="--"}
 	return listFixer(string);
 }
@@ -644,8 +656,9 @@ function generateFeatures(){
 		unnatural=t.unnatural
 		if(t.combat==true){combat=true}
 		}
+		if(race.name!="futakuchi-onna"){
 	if(Math.random()*100>70 && race.hashair==true){featurecount--;hair=generateHair(true);}
-	if(Math.random()*100>90 && race.hashair==false){featurecount--;hair=generateHair(false)+ " (wig)"}
+		if(Math.random()*100>90 && race.hashair==false){featurecount--;hair=generateHair(false)+ " (wig)"}}
 	
 	for(i=0;i<featurecount;i++){
 		
