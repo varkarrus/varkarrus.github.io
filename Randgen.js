@@ -107,6 +107,9 @@ function loadRaces() {
 	addRace("hyakume",70,180,true,true,false,0.5);
 	addRace("foocubus",66,134,true,true,false,0.5);
 	addRace("globglogabgalab",66,300,false,false,false,0.025);
+	addRace("tiefling",70,135,true,true,true,1);
+	addRace("moleman",41,40,true,true,false,0.2);
+	addRace("ogre",96,520,true,true,true,0.75);
 }
 function generateHair(includeBald){
 
@@ -140,8 +143,9 @@ function loadHeightWeightTypes(){
 	heighttypes.push({name:"very tall",minmult:1.10,maxmult:1.3,randweight:0.4,unnatural:false});
 	heighttypes.push({name:"unnaturally short",minmult:0.2,maxmult:0.8,randweight:0.35,unnatural:true});
 	heighttypes.push({name:"unnaturally tall",minmult:1.3,maxmult:1.85,randweight:0.35,unnatural:true});
-	heighttypes.push({name:"miniscule",minmult:0,maxmult:0.2,randweight:0.2,unnatural:true});
-	heighttypes.push({name:"colossal",minmult:1.85,maxmult:5,randweight:0.2,unnatural:true});	
+	heighttypes.push({name:"miniscule",minmult:0,maxmult:randomRange(0,0.2),randweight:0.2,unnatural:true});
+	heighttypes.push({name:"colossal",minmult:1.85,maxmult:10,randweight:0.2,unnatural:true});
+	
 	
 	weighttypes.push({name:"",minmult:0.94,maxmult:1.06,randweight:3,unnatural:false});
 	weighttypes.push({name:"chubby",minmult:1.06,maxmult:1.12,randweight:0.8,unnatural:false});
@@ -167,7 +171,7 @@ function loadFeatures(){
 	features.push({name:getRandom(["prosthetic arm","prosthetic leg"]),randweight:0.3,vis:0,unnatural:false});
 	features.push({name:getRandom(["albino","vitiligo","freckled"]),randweight:1,vis:1,unnatural:false});
 	features.push({name:getRandom(["glasses","sunglasses"]),randweight:1,vis:0,unnatural:false});
-	features.push({name:getRandom(["blind","deaf","missing an eye"]),randweight:0.3,vis:0,unnatural:false});
+	features.push({name:getRandom(["blind","deaf","missing an eye","mute"]),randweight:0.3,vis:0,unnatural:false});
 	features.push({name:getRandom(["multiple piercings","pierced lip","earrings","nose ring","tongue piercing"]),randweight:1,vis:1,unnatural:false});
 	features.push({name:"heavy makeup",randweight:1,vis:1,unnatural:false});
 	features.push({name:"invisible",randweight:0.75,vis:-1,unnatural:true});
@@ -190,6 +194,7 @@ function loadFeatures(){
 			features.push({name:"glowing eye",randweight:0.5,vis:1,unnatural:true})
 		}
 	features.push({name:"glowing skin",randweight:0.6,vis:1,unnatural:true})
+	features.push({name:getRandom([""]),randweight:0.6,vis:0,unnatural:false})
 }
 
 function loadAddedDetails(){
@@ -263,6 +268,8 @@ function loadJobs(){
 	jobs.push({name:"shopkeeper",randweight:1,combat:false});
 	jobs.push({name:"priest",randweight:1,combat:true});
 	jobs.push({name:"fireman",randweight:0.3,combat:false});
+	jobs.push({name:"pirate",randweight:0.3,combat:true});
+	jobs.push({name:"minecraft youtuber",randweight:0.1,combat:false});
 	
 	if(featurestring.includes("old")){
 		jobs.push({name:"pensioner",randweight:6,combat:false});
@@ -351,7 +358,7 @@ function loadCombat(){
 	weapons.push({name:"a sniper rifle",randweight:0.5})
 	weapons.push({name:"a rapier",randweight:0.5})
 	weapons.push({name:"a railgun",randweight:0.2})
-	weapons.push({name:getRandom(["a meteor hammer","a flying dagger"]),randweight:1})
+	weapons.push({name:getRandom(["a meteor hammer","a rope dart"]),randweight:1})
 	weapons.push({name:"martial arts",randweight:2})
 	weapons.push({name:"a laser gun",randweight:0.5})
 	weapons.push({name:getRandom(["a katana","an odachi","a naginata","a wakizashi"]),randweight:1})
@@ -557,6 +564,66 @@ function loadCombat(){
 	abilities.push({name:"enhanced perception",randweight:10})
 	abilities.push({name:"future vision",randweight:10})
 	}
+	if(race.name.includes("angel") && Math.random()*100>50){
+		abilities.push({name:"holy magic",randweight:5})
+		abilities.push({name:"angelic strength",randweight:5})
+		abilities.push({name:"angelic speed",randweight:5})
+	}
+	if(race.name.includes("reaper")){
+		weapons.push({name:"a scythe",randweight:10})
+	}
+	if(race.name.includes("demon")){
+		abilities.push({name:"dark magic",randweight:5})
+		abilities.push({name:"demonic strength",randweight:5})
+		abilities.push({name:"demonic speed",randweight:5})
+	}
+	if(race.name.includes("oni")){
+		weapons.push({name:"an oni club",randweight:3})
+		if(Math.random()*100>70){
+		abilities.push({name:"storm magic",randweight:5})
+		}
+	}
+	if(race.name.includes("alien")){
+		weapons.push({name:"a raygun",randweight:10})
+	}
+	if(race.name.includes("dragonfolk")&&Math.random()*100>60){
+		abilities.push({name:getRandom(["fire breath","ice breath","lightning breath","acid breath","poison breath"]),randweight:2})
+	}
+	if(race.name.includes("kitsune")&&Math.random()*100>60){
+		abilities.push({name:"illusion magic",randweight:3})
+	}
+	if(race.name.includes("dryad")&&Math.random()*100>80){
+		abilities.push({name:"earth magic",randweight:1})
+		abilities.push({name:"poison magic",randweight:0.2})
+		abilities.push({name:"plant control",randweight:1})
+		abilities.push({name:"camouflage",randweight:0.5})
+	}
+	if(race.name.includes("naiad")&&Math.random()*100>80){
+		abilities.push({name:"water magic",randweight:1})
+		abilities.push({name:"ice magic",randweight:0.2})
+	}
+	if(race.name.includes("sylph")&&Math.random()*100>80){
+		abilities.push({name:"air magic",randweight:4})
+		abilities.push({name:"lightning magic",randweight:1})
+		abilities.push({name:"ice magic",randweight:1})
+		abilities.push({name:"sound magic",randweight:0.2})
+	}
+	if(race.name.includes("alraune")&&Math.random()*100>60){
+		abilities.push({name:"poison magic",randweight:0.2})
+		abilities.push({name:"plant control",randweight:4})
+		abilities.push({name:"camouflage",randweight:0.2})
+	}
+	if(race.name.includes("futakuchi-onna")&&Math.random()*100>50){
+	weapons.push({name:"prehensile hair",randweight:5})
+	}
+	if(race.name.includes("yuki-onna")&&Math.random()*100>50){
+	abilities.push({name:"ice magic",randweight:5})}
+	
+	if(race.name.includes("globglogabgalab")&&Math.random()*100>50){
+	weapons.push({name:"shwibbly glib a kind",randweight:5})
+	abilities.push({name:"yeast of thoughts and minds",randweight:5})
+	}
+	
 		}
 
 function substrCount(string, substr){
@@ -871,7 +938,7 @@ var traits=[];
 var race;
 var featurestring;
 function generateChar(){
-	
+
 unnatural = false;
 combat = false;
 young = false;
@@ -895,7 +962,7 @@ gender=randGender();
 orientation=randOrientation();
 featurestring="";
 
-loadTraits();
+
 loadHobbies();
 
 loadRaces();
@@ -906,7 +973,7 @@ loadFeatures();
 
 featurestring = generateFeatures();
 loadJobs();
-
+loadTraits();
 randBodyType();
 occupationstring = generateOccupation();
 loadCombat();
