@@ -812,8 +812,8 @@ function generateOccupation(){
 			case "university student": heightmult*=0.95; break;
 			case "college student": heightmult*=0.95; break;
 			case "highschooler": heightmult*=randomRange(0.82,0.95); break;
-			case "grade schooler": heightmult*=randomRange(0.75,0.85); orientation = "-"; break;
-			case "preschooler": heightmult*=0.6; orientation = "-"; break;
+			case "grade schooler": heightmult*=randomRange(0.75,0.85); sorient = "-"; break;
+			case "preschooler": heightmult*=0.6; sorient = "-"; break;
 		}
 	}
 
@@ -914,7 +914,7 @@ function gendHas(){
 }
 
 function generateSummary(){
-	var string="Your character is a "+orientation+" "+gender+" "+race.name;
+	var string="Your character is a "+sorient+" "+gender+" "+race.name;
 	string+=gendHas()+featurestring
 	document.getElementById("Summary").innerHTML = string;
 }
@@ -959,7 +959,7 @@ bodytype="";
 loadHeightWeightTypes();
 
 gender=randGender();
-orientation=randOrientation();
+sorient=randOrientation();
 featurestring="";
 
 
@@ -980,7 +980,7 @@ loadCombat();
 
 document.getElementById("Race").innerHTML = "Race: "+race.name;
 document.getElementById("Gender").innerHTML = "Gender: "+gender;
-document.getElementById("Orientation").innerHTML = "Orientation: "+orientation;
+document.getElementById("Orientation").innerHTML = "Orientation: "+sorient;
 
 
 
