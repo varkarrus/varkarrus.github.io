@@ -937,6 +937,8 @@ var hobbies=[];
 var traits=[];
 var race=({name:"",height:0,weight:0,haslegs:false,hashair:false,hashorns:false,randweight:0});
 var featurestring;
+var sorient;
+
 function generateChar(){
 
 unnatural = false;
