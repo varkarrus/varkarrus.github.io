@@ -101,12 +101,12 @@ function loadRaces() {
 	addRace("alraune",66,234,true,false,false,0.5);
 	addRace("slime",66,134,true,true,false,0.5);
 	addRace("goblin",41,40,true,true,false,1);
-	addRace("tardigradefolk",66,160,true,false,false,0.2);
+	addRace("<a href='https://en.wikipedia.org/wiki/Tardigrade'>globglogabgalab</a>",66,160,true,false,false,0.2);
 	addRace("futakuchi-onna",66,130,true,true,false,0.5);
 	addRace("yuki-onna",66,130,true,true,false,0.5);
 	addRace("hyakume",70,180,true,true,false,0.5);
 	addRace("foocubus",66,134,true,true,false,0.5);
-	addRace("globglogabgalab",66,300,false,false,false,0.025);
+	addRace("<a href='https://www.youtube.com/watch?v=dtER80sOjX4'>globglogabgalab</a>",66,300,false,false,false,0.025);
 	addRace("tiefling",70,135,true,true,true,1);
 	addRace("moleman",41,40,true,true,false,0.2);
 	addRace("ogre",96,520,true,true,true,0.75);
@@ -216,7 +216,7 @@ function loadAddedDetails(){
 	details.push({name:"famous",randweight:1,unnatural:false,combat:false});
 	details.push({name:"royalty",randweight:1,unnatural:false,combat:false});
 	details.push({name:"superpowered",randweight:1,unnatural:true,combat:true});
-	details.push({name:"infested",randweight:0.2,unnatural:true,combat:true});
+	details.push({name:"infected",randweight:0.2,unnatural:true,combat:true});
 }
 
 function loadJobs(){
@@ -358,7 +358,7 @@ function loadCombat(){
 	weapons.push({name:"a sniper rifle",randweight:0.5})
 	weapons.push({name:"a rapier",randweight:0.5})
 	weapons.push({name:"a railgun",randweight:0.2})
-	weapons.push({name:getRandom(["a meteor hammer","a rope dart"]),randweight:1})
+	weapons.push({name:getRandom(["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a meteor hammer</a> ","<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a rope dart</a> "]),randweight:0.2})
 	weapons.push({name:"martial arts",randweight:2})
 	weapons.push({name:"a laser gun",randweight:0.5})
 	weapons.push({name:getRandom(["a katana","an odachi","a naginata","a wakizashi"]),randweight:1})
@@ -533,7 +533,7 @@ function loadCombat(){
 		abilities.push({name:"insect control",randweight:1})
 		abilities.push({name:"invisibility",randweight:1})
 	}
-	if(featurestring.includes("infested")){
+	if(featurestring.includes("infected")){
 		abilities.push({name:"super strength",randweight:1})
 		abilities.push({name:"insect control",randweight:1})
 		abilities.push({name:"shapeshifting",randweight:1})
@@ -622,6 +622,10 @@ function loadCombat(){
 	if(race.name.includes("globglogabgalab")&&Math.random()*100>50){
 	weapons.push({name:"shwibbly glib a kind",randweight:5})
 	abilities.push({name:"yeast of thoughts and minds",randweight:5})
+	}
+	
+	if(Math.random()*100>98){
+		abilities.push({name:"unusually good luck",randweight:1})
 	}
 	
 		}
