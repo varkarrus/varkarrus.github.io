@@ -380,7 +380,7 @@ function loadCombat(){
 	weapons.push({name:["martial arts",""],hands:0,randweight:2})
 	weapons.push({name:["a laser gun","laser guns"],hands:1,randweight:0.5})
 	weapons.push({name:getRandom([["an odachi",""],["a naginata",""]]),hands:2,randweight:1})
-	weapons.push({name:getRandom([["a katana","katanas"]["a wakizashi","wakizashis"]]),hands:1,randweight:1})
+	weapons.push({name:getRandom([["a katana","katanas"],["a wakizashi","wakizashis"]]),hands:1,randweight:1})
 	weapons.push({name:getRandom([["a spear",""],["a polearm",""],["a javelin",""]]),hands:1,randweight:0.5})
 	weapons.push({name:["a hammer","hammers"],hands:2,randweight:0.5})
 	weapons.push({name:["a shield",""],hands:1,randweight:0.5})
