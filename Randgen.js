@@ -376,10 +376,10 @@ function loadCombat(){
 	weapons.push({name:["a rocket launcher",""],hands:2,randweight:0.2})
 	weapons.push({name:["a sniper rifle",""],hands:2,randweight:0.5})
 	weapons.push({name:["a railgun",""],hands:2,randweight:0.2})
-	weapons.push({name:getRandom([["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a meteor hammer</a> ",""],["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a rope dart</a> ",""]]),randweight:0.2})
+	weapons.push({name:getRandom([["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a meteor hammer</a>",""],["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a rope dart</a>",""]]),randweight:0.2})
 	weapons.push({name:["martial arts",""],hands:0,randweight:2})
 	weapons.push({name:["a laser gun","laser guns"],hands:1,randweight:0.5})
-	weapons.push({name:getRandom([["an odachi"],["a naginata"]]),hands:2,randweight:1})
+	weapons.push({name:getRandom([["an odachi",""],["a naginata",""]]),hands:2,randweight:1})
 	weapons.push({name:getRandom([["a katana","katanas"]["a wakizashi","wakizashis"]]),hands:1,randweight:1})
 	weapons.push({name:getRandom([["a spear",""],["a polearm",""],["a javelin",""]]),hands:1,randweight:0.5})
 	weapons.push({name:["a hammer","hammers"],hands:2,randweight:0.5})
@@ -419,8 +419,8 @@ function loadCombat(){
 		abilities.push({name:"life drain",randweight:0.5})
 	}
 	if(featurestring.includes("lich")){
-	weapons.push({name:getRandom(["a staff",""]),hands:1,randweight:4})
-	weapons.push({name:getRandom(["a wand",""]),hands:1,randweight:4})
+	weapons.push({name:["a staff",""],hands:1,randweight:4})
+	weapons.push({name:["a wand",""],hands:1,randweight:4})
 	abilities.push({name:"fire magic",randweight:1})
 	abilities.push({name:"ice magic",randweight:1})
 	abilities.push({name:"earth magic",randweight:1})
@@ -569,13 +569,13 @@ function loadCombat(){
 			weapons.push({name:["a spade","spades"],hands:1,randweight:2})
 		}
 		if(occupationstring.includes("chef")||occupationstring.includes("cook")){
-			weapons.push({name:"a frying pan",randweight:0.5})
-			weapons.push({name:"cutlery",randweight:0.5})
-			weapons.push({name:"a kitchen knife",randweight:0.5})
-			weapons.push({name:"a rolling pin",randweight:0.5})
+			weapons.push({name:["a frying pan",""],hands:1,randweight:0.5})
+			weapons.push({name:["cutlery",""],hands:2,randweight:0.5})
+			weapons.push({name:["a kitchen knife","kitchen knives"],hands:1,randweight:0.5})
+			weapons.push({name:["a rolling pin",""],hands:1,randweight:0.5})
 		}
 		if(occupationstring.includes("scientist")||occupationstring.includes("science")){
-			weapons.push({name:"an experimental gun",randweight:2})
+			weapons.push({name:["an experimental gun","experimental guns"],hands:1,randweight:2})
 		}
 		
 	if(race.name.includes("gorgon")){
@@ -591,7 +591,7 @@ function loadCombat(){
 		abilities.push({name:"angelic speed",randweight:5})
 	}
 	if(race.name.includes("reaper")){
-		weapons.push({name:"a scythe",randweight:10})
+		weapons.push({name:["a scythe",""],hands:2,randweight:10})
 	}
 	if(race.name.includes("demon")){
 		abilities.push({name:"dark magic",randweight:5})
@@ -599,13 +599,13 @@ function loadCombat(){
 		abilities.push({name:"demonic speed",randweight:5})
 	}
 	if(race.name.includes("oni")){
-		weapons.push({name:"an oni club",randweight:3})
+		weapons.push({name:["an oni club","oni clubs"],hands:2,randweight:3})
 		if(Math.random()*100>70){
 		abilities.push({name:"storm magic",randweight:5})
 		}
 	}
 	if(race.name.includes("alien")){
-		weapons.push({name:"a raygun",randweight:10})
+		weapons.push({name:["a raygun","rayguns"],hands:1,randweight:10})
 	}
 	if(race.name.includes("dragonfolk")&&Math.random()*100>60){
 		abilities.push({name:getRandom(["fire breath","ice breath","lightning breath","acid breath","poison breath"]),randweight:2})
@@ -635,13 +635,13 @@ function loadCombat(){
 		abilities.push({name:"camouflage",randweight:0.2})
 	}
 	if(race.name.includes("futakuchi-onna")&&Math.random()*100>50){
-	weapons.push({name:"prehensile hair",randweight:5})
+	weapons.push({name:["prehensile hair",""],hands:0,randweight:5})
 	}
 	if(race.name.includes("yuki-onna")&&Math.random()*100>50){
 	abilities.push({name:"ice magic",randweight:5})}
 	
 	if(race.name.includes("globglogabgalab")&&Math.random()*100>50){
-	weapons.push({name:"shwibbly glib a kind",randweight:5})
+	weapons.push({name:["shwibbly glib a kind",""],hands:0,randweight:5})
 	abilities.push({name:"yeast of thoughts and minds",randweight:5})
 	}
 	
