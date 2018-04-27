@@ -1,4 +1,4 @@
-function addRace(_name,_height,_weight,_hashair,_haslegs,_hashorns,_randweight){
+function addRace(_name,_height,_weight,_hashair,_haslegs,_hashorns,_haswings,_arms,_randweight){
 	races.push({
 name:_name,
 height:_height,
@@ -6,6 +6,8 @@ weight:_weight,
 hashair:_hashair,
 hashorns:_hashorns,
 haslegs:_haslegs,
+haswings:_haswings,
+arms:_arms,
 	randweight:_randweight});	
 }
 function getArrayRandom(array) {
@@ -58,58 +60,62 @@ function randomRange(minmult,maxmult){
 
 function loadRaces() {
 
-	addRace("human",66,134,true,true,false,0);
-	addRace("elf",70,135,true,true,false,1);
-	addRace("dwarf",54,105,true,true,false,1);
-	addRace("orc",70,180,true,true,false,1);
-	addRace("fairy",3,0.0122,true,true,false,1);
-	addRace("clone of hollywood superstar Nicholas Cage",72,150,true,true,false,0.025);
-	addRace("cyclops",267,8580,true,true,false,0.5);
-	addRace("troll",113,632,true,true,true,0.5);
-	addRace("gnome",41,40,true,true,false,1);
-	addRace("catfolk",66,134,true,true,false,0.5);
-	addRace("wolffolk",66,134,true,true,false,0.5);
-	addRace("merfolk",78,154,true,false,false,0.5);
-	addRace("octofolk",66,154,true,false,false,0.2);
-	addRace("harpy",65,124,true,true,false,0.5);
-	addRace("centaur",80,1160,true,true,false,0.5);
-	addRace("dullahan",66,134,true,true,false,0.5);
-	addRace("drider",78,250,true,true,false,0.2);
-	addRace("angel",66,144,true,true,false,0.5);
-	addRace("reaper",66,64,true,true,false,0.2);
-	addRace("demon",70,180,true,true,true,1);
-	addRace("oni",90,314,true,true,true,0.5);
-	addRace("alien",66,134,true,true,false,0.5);
-	addRace("robot",66,154,false,true,false,0.5);
-	addRace("golem",66,194,false,true,false,0.5);
-	addRace("deep one",66,134,true,true,false,0.2);
-	addRace("mothman",66,114,true,true,false,0.5);
-	addRace("dragonfolk",76,185,true,true,true,0.5);
-	addRace("giant",315,14378,true,true,false,0.5);
-	addRace("titan",660,130000,true,true,false,0.2);
-	addRace("kitsune",66,134,true,true,false,0.5);
-	addRace("ettin",182,2860,true,true,false,0.5);
-	addRace("homunculus",12,2,true,true,false,0.2);
-	addRace("gorgon",66,134,true,false,false,0.5);
-	addRace("lizardfolk",66,134,false,true,false,0.5);
-	addRace("naga",92,1543,true,true,false,0.5); //276 inches long
-	addRace("imp",41,40,true,true,true,0.5);
-	addRace("bearfolk",76,185,true,true,false,0.5);
-	addRace("dryad",63,124,true,true,false,0.5);
-	addRace("naiad",63,124,true,true,false,0.5);
-	addRace("sylph",63,8.5,true,true,false,0.5);
-	addRace("alraune",66,234,true,false,false,0.5);
-	addRace("slime",66,134,true,true,false,0.5);
-	addRace("goblin",41,40,true,true,false,1);
-	addRace("<a href='https://en.wikipedia.org/wiki/Tardigrade'>globglogabgalab</a>",66,160,true,false,false,0.2);
-	addRace("futakuchi-onna",66,130,true,true,false,0.5);
-	addRace("yuki-onna",66,130,true,true,false,0.5);
-	addRace("hyakume",70,180,true,true,false,0.5);
-	addRace("foocubus",66,134,true,true,false,0.5);
-	addRace("<a href='https://www.youtube.com/watch?v=dtER80sOjX4'>globglogabgalab</a>",66,300,false,false,false,0.025);
-	addRace("tiefling",70,135,true,true,true,1);
-	addRace("moleman",41,40,true,true,false,0.2);
-	addRace("ogre",96,520,true,true,true,0.75);
+	addRace("human",66,134,true,true,false,false,2,0);
+	addRace("elf",70,135,true,true,false,false,2,1);
+	addRace("dwarf",54,105,true,true,false,false,2,1);
+	addRace("orc",70,180,true,true,false,false,2,1);
+	addRace("fairy",3,0.0122,true,true,false,true,2,1);
+	addRace("clone of hollywood superstar Nicholas Cage",72,150,true,true,false,false,2,0.025);
+	addRace("cyclops",267,8580,true,true,false,false,2,0.5);
+	addRace("troll",113,632,true,true,true,false,2,0.5);
+	addRace("gnome",41,40,true,true,false,false,2,1);
+	addRace("catfolk",66,134,true,true,false,false,2,0.5);
+	addRace("wolffolk",66,134,true,true,false,false,2,0.5);
+	addRace("merfolk",78,154,true,false,false,false,2,0.5);
+	addRace("octofolk",66,154,true,false,false,false,2,0.2);
+	addRace("harpy",65,124,true,true,false,true,2,0.5);
+	addRace("centaur",80,1160,true,true,false,false,2,0.5);
+	addRace("dullahan",66,134,true,true,false,false,2,0.5);
+	addRace("drider",78,250,true,true,false,false,2,0.2);
+	addRace("angel",66,144,true,true,false,true,2,0.5);
+	addRace("reaper",66,64,true,true,false,false,2,0.2);
+	addRace("demon",70,180,true,true,true,true,2,1);
+	addRace("oni",90,314,true,true,true,false,2,0.5);
+	addRace("alien",66,134,true,true,false,false,2,0.5);
+	addRace("robot",66,154,false,true,false,false,2,0.5);
+	addRace("golem",66,194,false,true,false,false,2,0.5);
+	addRace("deep one",66,134,true,true,false,false,2,0.2);
+	addRace("mothman",66,114,true,true,false,true,2,0.5);
+	addRace("dragonfolk",76,185,true,true,true,true,2,0.5);
+	addRace("giant",315,14378,true,true,false,false,2,0.5);
+	addRace("titan",660,130000,true,true,false,false,2,0.2);
+	addRace("kitsune",66,134,true,true,false,false,2,0.5);
+	addRace("ettin",182,2860,true,true,false,false,2,0.5);
+	addRace("homunculus",12,2,true,true,false,false,2,0.2);
+	addRace("gorgon",66,134,true,false,false,false,2,0.5);
+	addRace("lizardfolk",66,134,false,true,false,false,2,0.5);
+	addRace("naga",74,790,true,true,false,false,2,0.5); //276 inches long
+	addRace("imp",41,40,true,true,true,true,2,0.5);
+	addRace("bearfolk",76,185,true,true,false,false,2,0.5);
+	addRace("dryad",63,124,true,true,false,false,2,0.5);
+	addRace("naiad",63,124,true,true,false,false,2,0.5);
+	addRace("sylph",63,8.5,true,true,false,true,2,0.5);
+	addRace("alraune",66,234,true,false,false,false,2,0.5);
+	addRace("slime",66,134,true,true,false,false,2,0.5);
+	addRace("goblin",41,40,true,true,false,false,2,1);
+	addRace("<a href='https://en.wikipedia.org/wiki/Tardigrade'>Tardigradekin</a>",66,150,true,false,false,false,6,0.2);
+	addRace("futakuchi-onna",66,130,true,true,false,false,2,0.5);
+	addRace("yuki-onna",66,130,true,true,false,false,2,0.5);
+	addRace("hyakume",70,180,true,true,false,false,2,0.5);
+	addRace("foocubus",66,134,true,true,false,true,2,0.5);
+	addRace("<a href='https://www.youtube.com/watch?v=dtER80sOjX4'>globglogabgalab</a>",66,300,false,false,false,false,2,0.02);
+	addRace("tiefling",70,135,true,true,true,false,2,1);
+	addRace("moleman",41,40,true,true,false,false,2,0.2);
+	addRace("ogre",96,520,true,true,true,false,2,0.75);
+	addRace("antfolk",66,134,false,true,false,false,4,0.5);
+	addRace("beefolk",66,134,true,true,false,true,4,0.5);
+
+
 }
 function generateHair(includeBald){
 
@@ -155,6 +161,8 @@ function loadHeightWeightTypes(){
 	weighttypes.push({name:"obese",minmult:1.24,maxmult:1.5,randweight:0.4,unnatural:false});
 	weighttypes.push({name:"thin",minmult:0.88,maxmult:0.94,randweight:1.6,unnatural:false});
 	weighttypes.push({name:"very thin",minmult:0.74,maxmult:0.88,randweight:0.5,unnatural:false});
+	
+	
 }
 
 function loadFeatures(){
@@ -181,6 +189,13 @@ function loadFeatures(){
 	features.push({name:"androgynous",randweight:1,vis:1,unnatural:false});
 	features.push({name:"mouth stomach",randweight:0.5,vis:0,unnatural:true});
 	features.push({name:"large claws",randweight:1,vis:0,unnatural:true});
+	if(race.haswings==true){
+		features.push({name:getRandom(["missing wing","extra wings","big wings","small wings"]),randweight:0.5,vis:0,unnatural:false});
+	}
+	else{
+		features.push({name:"has wings",randweight:0.25,vis:0,unnatural:true});
+	}
+	
 	if(race.hashorns==false){
 	features.push({name:getRandom(["big horns","small horns","curly horns","four horns"]),randweight:0.75,vis:0,unnatural:true});}
 	else{
@@ -194,7 +209,7 @@ function loadFeatures(){
 			features.push({name:"glowing eye",randweight:0.5,vis:1,unnatural:true})
 		}
 	features.push({name:"glowing skin",randweight:0.6,vis:1,unnatural:true})
-	features.push({name:getRandom([""]),randweight:0.6,vis:0,unnatural:false})
+	features.push({name:"weightless",randweight:0.1,vis:0,unnatural:true})
 }
 
 function loadAddedDetails(){
@@ -343,31 +358,36 @@ function loadTraits(){
 }
 
 function loadCombat(){
-	weapons.push({name:getRandom(["a pistol","two pistols"]),randweight:2})
-	weapons.push({name:getRandom(["a sword","two swords","a two-handed sword"]),randweight:2})
-	weapons.push({name:getRandom(["a handaxe","two handaxes","a battleaxe"]),randweight:0.5})
-	weapons.push({name:"a shovel",randweight:0.2})
-	weapons.push({name:"a scythe",randweight:0.2})
-	weapons.push({name:getRandom(["a crossbow","two crossbows"]),randweight:1})
-	weapons.push({name:getRandom(["a shortbow","a longbow"]),randweight:0.5})
-	weapons.push({name:getRandom(["a knife","two knives","throwing knives"]),randweight:1})
-	weapons.push({name:"a rapier",randweight:0.5})
-	weapons.push({name:"a shotgun",randweight:0.5})
-	weapons.push({name:"an assault rifle",randweight:0.5})
-	weapons.push({name:"a rocket launcher",randweight:0.2})
-	weapons.push({name:"a sniper rifle",randweight:0.5})
-	weapons.push({name:"a rapier",randweight:0.5})
-	weapons.push({name:"a railgun",randweight:0.2})
-	weapons.push({name:getRandom(["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a meteor hammer</a> ","<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a rope dart</a> "]),randweight:0.2})
-	weapons.push({name:"martial arts",randweight:2})
-	weapons.push({name:"a laser gun",randweight:0.5})
-	weapons.push({name:getRandom(["a katana","an odachi","a naginata","a wakizashi"]),randweight:1})
-	weapons.push({name:getRandom(["a spear","a polearm","a javelin"]),randweight:0.5})
-	weapons.push({name:getRandom(["a hammer","a warhammer","a club"]),randweight:0.5})
-	weapons.push({name:"a shield",randweight:0.5})
+	weapons.push({name:["a pistol","pistols"],hands:1,randweight:2,})
+	weapons.push({name:["a sword","swords"],hands:1,randweight:2})
+	weapons.push({name:["a two-handed sword","two-handed swords"],hands:2,randweight:1})
+	weapons.push({name:["a battleaxe","battleaxes"],hands:2,randweight:0.5})
+	weapons.push({name:["a shovel",""],hands:2,randweight:0.2})
+	weapons.push({name:["a scythe",""],hands:2,randweight:0.2})
+	weapons.push({name:["a sickle","sickles"],hands:1,randweight:0.1})
+	weapons.push({name:["a crossbow","crossbows"],hands:1,randweight:1})
+	weapons.push({name:["a shortbow",""],hands:2,randweight:0.5})
+	weapons.push({name:["a longbow",""],hands:2,randweight:0.5})
+	weapons.push({name:["a knife","knives"],randweight:1})
+	weapons.push({name:["throwing knives",""],hands:0,randweight:1})
+	weapons.push({name:["a rapier","rapiers"],hands:1,randweight:0.5})
+	weapons.push({name:["a shotgun","shotguns"],hands:1,randweight:0.5})
+	weapons.push({name:["an assault rifle","assault rifles"],hands:1,randweight:0.5})
+	weapons.push({name:["a rocket launcher",""],hands:2,randweight:0.2})
+	weapons.push({name:["a sniper rifle",""],hands:2,randweight:0.5})
+	weapons.push({name:["a railgun",""],hands:2,randweight:0.2})
+	weapons.push({name:getRandom([["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a meteor hammer</a> ",""],["<a href='https://www.youtube.com/watch?v=uhW67MBO8M8'>a rope dart</a> ",""]]),randweight:0.2})
+	weapons.push({name:["martial arts",""],hands:0,randweight:2})
+	weapons.push({name:["a laser gun","laser guns"],hands:1,randweight:0.5})
+	weapons.push({name:getRandom([["an odachi"],["a naginata"]]),hands:2,randweight:1})
+	weapons.push({name:getRandom([["a katana","katanas"]["a wakizashi","wakizashis"]]),hands:1,randweight:1})
+	weapons.push({name:getRandom([["a spear",""],["a polearm",""],["a javelin",""]]),hands:1,randweight:0.5})
+	weapons.push({name:["a hammer","hammers"],hands:2,randweight:0.5})
+	weapons.push({name:["a shield",""],hands:1,randweight:0.5})
 	
 	if(featurestring.includes("magic user")){
-	weapons.push({name:getRandom(["a staff","a wand"]),randweight:10})
+	weapons.push({name:["a staff",""],hands:1,randweight:4})
+	weapons.push({name:["a wand",""],hands:1,randweight:4})
 	abilities.push({name:"fire magic",randweight:1})
 	abilities.push({name:"ice magic",randweight:1})
 	abilities.push({name:"earth magic",randweight:1})
@@ -384,8 +404,8 @@ function loadCombat(){
 	abilities.push({name:"space magic",randweight:0.5})
 	}
 	if(featurestring.includes("cyborg")){
-		weapons.push({name:"an arm laser",randweight:2})
-		weapons.push({name:"a shoulder mounted rocket launcher",randweight:2})
+		weapons.push({name:["an arm laser",""],hands:1,randweight:2})
+		weapons.push({name:["a shoulder mounted rocket launcher",""],hands:0,randweight:2})
 	}
 	if(featurestring.includes("ghost")){
 		abilities.push({name:"possession",randweight:1})
@@ -399,7 +419,8 @@ function loadCombat(){
 		abilities.push({name:"life drain",randweight:0.5})
 	}
 	if(featurestring.includes("lich")){
-	weapons.push({name:getRandom(["a staff","a wand"]),randweight:10})
+	weapons.push({name:getRandom(["a staff",""]),hands:1,randweight:4})
+	weapons.push({name:getRandom(["a wand",""]),hands:1,randweight:4})
 	abilities.push({name:"fire magic",randweight:1})
 	abilities.push({name:"ice magic",randweight:1})
 	abilities.push({name:"earth magic",randweight:1})
@@ -543,9 +564,9 @@ function loadCombat(){
 	}
 	
 		if(occupationstring.includes("farmer")||occupationstring.includes("garden")){
-			weapons.push({name:"a hoe",randweight:2})
-			weapons.push({name:"a rake",randweight:2})
-			weapons.push({name:"",randweight:2})
+			weapons.push({name:["a hoe",""],hands:1,randweight:2})
+			weapons.push({name:["a rake",""],hands:1,randweight:2})
+			weapons.push({name:["a spade","spades"],hands:1,randweight:2})
 		}
 		if(occupationstring.includes("chef")||occupationstring.includes("cook")){
 			weapons.push({name:"a frying pan",randweight:0.5})
@@ -678,10 +699,28 @@ function generateRace(){
 		race.haslegs = (race1.haslegs && race2.haslegs)
 		race.hashair = (race1.hashair || race2.hashair)
 		race.hashorns = (race1.hashorns || race2.hashorns)
+		race.harwings = (race1.haswings || race2.haswings)
+		if(Math.random()>0.5){race.arms = race1.arms}else{race.arms=race2.arms}
 	}
 	
   };
 	if (race.name.includes("demon")){unnatural=true;}
+}
+
+function stringnumber(num){
+	switch (num){
+	case 0: return "zero"; break;
+	case 1: return "one"; break;
+	case 2: return "two"; break;
+	case 3: return "three"; break;
+	case 4: return "four"; break;
+	case 5: return "five"; break;
+	case 6: return "six"; break;
+	case 7: return "seven"; break;
+	case 8: return "eight"; break;
+	case 9: return "nine"; break;
+	case 10: return "ten"; break;
+	}
 }
 
 function generateCombat(){
@@ -691,18 +730,42 @@ function generateCombat(){
 		string="uses "
 		if(Math.random()*100>65 || abilities.length==0){
 		
+		/*
 		if(Math.random()*100>70){
 			var t1 = getArrayRandom(weapons)
 			var t2 = getArrayRandom(weapons)
-			do{t2 = getArrayRandom(weapons)}while(t2.name==t1.name)
+			do{t2 = getArrayRandom(weapons)}while(t2.name[0]==t1.name[0])
 			string+=" "+t1.name+" and "+t2.name
 		}else{
-			string+=" "+getArrayRandom(weapons).name
+			string+=" "+getArrayRandom(weapons).name[0]
 		}
 			if(featurestring.includes("extra arms")){
 			string=string.replace(/two/g,"four")
 			}
+		*/
+		
+		var value = Math.random()*100
+		
+		if(value>0 && value <= 50 || arms==1){
+			var t1 = getArrayRandom(weapons)
+			do{t1 = getArrayRandom(weapons)}while(t1.name[0]=="a shield" || t1.hands>arms)
+			string+=" "+t1.name[0];
 		}
+		else if(value>50 && value < 751){
+			var t1 = getArrayRandom(weapons)
+			var t2 = getArrayRandom(weapons)
+			do{t2 = getArrayRandom(weapons)}while(t2.name[0]==t1.name[0] || t2.hands+t1.hands > arms)
+			string+=" "+t1.name[0]+" and "+t2.name[0]
+		}
+		else{
+			var t1 = getArrayRandom(weapons)
+			do{t1=getArrayRandom(weapons)}while(t1.name[1]=="")
+			string+=" "+stringnumber(arms/t1.hands)+" "+t1.name[1]
+		}
+		
+		
+		}
+		
 		if(abilities.length>0){
 			var t3 = getArrayRandom(abilities)
 			var t4 = null;
@@ -762,8 +825,13 @@ function generateFeatures(){
 	for(i=0;i<featurecount;i++){
 		
 		do{
-		var tempfeature = getArrayRandomUnnatural(features);}while(vis!=0 && tempfeature.vis!=0 && vis!=tempfeature.vis)
+		var tempfeature = getArrayRandomUnnatural(features);}while(vis!=0 && tempfeature.vis!=0 && vis!=tempfeature.vis || (addedDetail.name=="ghost" && tempfeature.name=="weightless") )
 		if(tempfeature.vis!=0){vis=tempfeature.vis}
+		if(tempfeature.name.includes("extra arms")){
+			if(Math.random()*100>80 && race.arms < 6){arms+=4}
+			else{arms+=2}
+			tempfeature.name= stringnumber(arms)+" arms"
+		}
 		if(tempfeature.name.includes("hair")==false || race.hashair==true){
 		if(string!=""){string+=", ";}
 		string+=tempfeature.name;
@@ -871,13 +939,20 @@ function stringHeight(inches) {
 function stringWeight(pounds){
 	if(pounds>2000){pounds*=0.0005;return Math.round(pounds*100)/100 +" tons";}
 	if(pounds>10){return Math.round(pounds)+" lbs";}
-else{
+else if(pounds>0){
 	pounds*=16;
 	return Math.round(pounds*100)/100 + " ounces";
+}
+else if(pounds==0){
+	return("weightless");
 }
 }
 
 function randBodyType(){
+
+if(featurestring.includes("lich")||featurestring.includes("undead")){
+weighttypes.push({name:"skeletal",minmult:0.45,maxmult:0.55,randweight:2,unnatural:false});
+}
 
 var heighttype = getArrayRandomUnnatural(heighttypes);
 var weighttype = getArrayRandomUnnatural(weighttypes);
@@ -942,9 +1017,10 @@ var traits=[];
 var race=({name:"",height:0,weight:0,haslegs:false,hashair:false,hashorns:false,randweight:0});
 var featurestring;
 var sorient;
+var arms = 2;
 
 function generateChar(){
-
+arms=2;
 unnatural = false;
 combat = false;
 young = false;
@@ -992,7 +1068,8 @@ document.getElementById("Orientation").innerHTML = "Orientation: "+sorient;
 
 document.getElementById("Features").innerHTML = "Features: "+featurestring;
 document.getElementById("Occupation").innerHTML = "Occupation: "+occupationstring;
-weightmult *= Math.pow(heightmult,2.9);
+weightmult *= Math.pow(heightmult,2.7);
+if(featurestring.includes("ghost")||featurestring.includes("weightless")){weightmult=0;}
 document.getElementById("BType").innerHTML = "Body Type: "+bodytype+" ("+stringHeight(race.height*heightmult)+", "+stringWeight(race.weight*weightmult)+")";
 document.getElementById("Personality").innerHTML = "Personality: "+generatePersonality();
 document.getElementById("Combat").innerHTML = "Combat: "+generateCombat();
