@@ -285,9 +285,13 @@ function loadJobs(){
 	jobs.push({name:"fireman",randweight:0.3,combat:false});
 	jobs.push({name:"pirate",randweight:0.3,combat:true});
 	jobs.push({name:"minecraft youtuber",randweight:0.1,combat:false});
+	jobs.push({name:"knight",randweight:0.3,combat:true});
+	jobs.push({name:"gameshow host",randweight:0.1,combat:false});
+	jobs.push({name:"biostatistician",randweight:0.1,combat:false});
+
 	
 	if(featurestring.includes("old")){
-		jobs.push({name:"pensioner",randweight:6,combat:false});
+		jobs.push({name:"pensioner",randweight:10,combat:false});
 	}
 	
 }
@@ -307,6 +311,9 @@ function loadHobbies(){
 	hobbies.push({name:"fishing",randweight:0.3,combat:false,jobname:"fisherman"});
 	hobbies.push({name:"science",randweight:1,combat:false,jobname:"scientist"});
 	hobbies.push({name:"history",randweight:1,combat:false,jobname:"historian"});
+	hobbies.push({name:"magic tricks",randweight:0.1,combat:false,jobname:"magician"});
+	hobbies.push({name:"writing webcomics",randweight:0.1,combat:false,jobname:"webcomic writer"});
+
 	
 	hobbies.push({name:"model trains",randweight:0.3,combat:false,jobname:""});
 	hobbies.push({name:"video games",randweight:1,combat:false,jobname:""});
@@ -476,6 +483,7 @@ function loadCombat(){
 		abilities.push({name:"shapeshifting",randweight:1})
 		abilities.push({name:"teleportation",randweight:1})
 		abilities.push({name:"berserk rage",randweight:1})
+		abilities.push({name:"cloning",randweight:0.3})
 	}
 	if(featurestring.includes("genetic experiment")){
 		abilities.push({name:"enhanced strength",randweight:2})
@@ -553,6 +561,7 @@ function loadCombat(){
 		abilities.push({name:"enhanced perception",randweight:1})
 		abilities.push({name:"insect control",randweight:1})
 		abilities.push({name:"invisibility",randweight:1})
+		abilities.push({name:"cloning",randweight:0.3})
 	}
 	if(featurestring.includes("infected")){
 		abilities.push({name:"super strength",randweight:1})
@@ -561,6 +570,7 @@ function loadCombat(){
 		abilities.push({name:"rapid regeneration",randweight:1})
 		abilities.push({name:"berserk rage",randweight:1})
 		abilities.push({name:"poison",randweight:1})
+		abilities.push({name:"cloning",randweight:0.3})
 	}
 	
 		if(occupationstring.includes("farmer")||occupationstring.includes("garden")){
@@ -1020,6 +1030,7 @@ var sorient;
 var arms = 2;
 
 function generateChar(){
+	//do{
 arms=2;
 unnatural = false;
 combat = false;
@@ -1065,15 +1076,15 @@ document.getElementById("Gender").innerHTML = "Gender: "+gender;
 document.getElementById("Orientation").innerHTML = "Orientation: "+sorient;
 
 
-
+var combatstring = generateCombat();
 document.getElementById("Features").innerHTML = "Features: "+featurestring;
-document.getElementById("Occupation").innerHTML = "Occupation: "+occupationstring;
+document.getElementById("Occupation").innerHTML = "Interests: "+occupationstring;
 weightmult *= Math.pow(heightmult,2.7);
 if(featurestring.includes("ghost")||featurestring.includes("weightless")){weightmult=0;}
-document.getElementById("BType").innerHTML = "Body Type: "+bodytype+" ("+stringHeight(race.height*heightmult)+", "+stringWeight(race.weight*weightmult)+")";
+document.getElementById("BType").innerHTML = "Body Type: "+bodytype+" ("+stringHeight(race.height*heightmult)+", "+stringWeight(race.weight*weightmult)+((combatstring.includes("sizeshifting") || combatstring.includes("shapeshifting"))?", variable":"")+")";
 document.getElementById("Personality").innerHTML = "Personality: "+generatePersonality();
-document.getElementById("Combat").innerHTML = "Combat: "+generateCombat();
-
+document.getElementById("Combat").innerHTML = "Combat: "+combatstring;
+//}while(document.getElementById("BType").innerHTML.includes("variable")==false)
 //generateSummary();
 }
 
