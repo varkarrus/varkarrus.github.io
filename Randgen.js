@@ -189,6 +189,7 @@ function loadFeatures(){
 	features.push({name:"androgynous",randweight:1,vis:1,unnatural:false});
 	features.push({name:"mouth stomach",randweight:0.5,vis:0,unnatural:true});
 	features.push({name:"large claws",randweight:1,vis:0,unnatural:true});
+	if(race.name!="human"){features.push({name:"disguised as a human",randweight:0.5,vis:1,unnatural:false});}
 	if(race.haswings==true){
 		features.push({name:getRandom(["missing wing","extra wings","big wings","small wings"]),randweight:0.5,vis:0,unnatural:false});
 	}
