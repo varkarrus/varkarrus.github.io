@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+button.hide {display: inline;margin-right: 20px;}
+p.resultStart{display: inline;font-weight: bold;}
+p.result{display: inline;}
+button.show{display: none;}
+div.resultRow{margin:5px;}
+</style>
+</head>
 <body>
 <button id ="generate">Generate</button>
 
-<p id="Race">Race: </p>
-<p id="Gender">Gender: </p>
-<p id="Orientation">Orientation: </p>
+<div id="raceMenuDiv" style="display: inline;">
+<select id="raceMenu">
+	<option value="all">All Races</option>
+	<option value="humanOnly">Human Only</option>
+	<option value="scifi">Sci-Fi</option>
+	<option value="fantasy">Fantasy</option>
+	<option value="fantasyNoDND">Fantasy, no DnD</option>
+	<option value="anthro">Anthro</option>
+	<option value="fanthro">Fantasy And Anthro</option>
+	<option value="fanthroNoDND">Fantasy And Anthro, no DnD</option>
+	<option value="DND">DnD Races</option>
+	
+</select>
+<label for="races">Races</label>
+</div>
+<div id="noHybridsDiv" style="display: inline;">
+<input id="noHybrids" type="checkbox">
+<label for="noHybrids">No Hybrids</label>
+</div>
+<div id="noUnnaturalDiv" style="display: inline;">
+<input id="noUnnatural" type="checkbox">
+<label for="noUnnatural">No Unnatural Features</label>
+</div>
+<div id="genderDetailsDiv" style="display: inline;">
+<input id="genderDetails" type="checkbox">
+<label for="genderDetails">Gender Details</label>
+</div>
+<div id="MBTIDiv" style="display: inline;">
+<input id="MBTI" type="checkbox">
+<label for="MBTI">MBTI Personality Type</label>
+</div>
+<div id="alwaysCombatDiv" style="display: inline;">
+<input id="alwaysCombat" type="checkbox">
+<label for="alwaysCombat">Always Generate Combat</label>
+</div>
 
-<p id="BType">Body Type: </p>
+<p>Include:</p>
+<button id="showRace" class="show" data-type="Race">Race</button>
+<button id="showAge" class="show" data-type="Age">Age</button>
+<button id="showStarSign" class="show" data-type="StarSign">Star Sign</button>
+<button id="showBloodType" class="show" data-type="BloodType">Blood Type</button>
+<button id="showGender" class="show" data-type="Gender">Gender</button>
+<button id="showOrientation" class="show" data-type="Orientation">Orientation</button>
+<button id="showBType" class="show" data-type="BType">Body Type</button>
+<button id="showFeatures" class="show" data-type="Features">Features</button>
+<button id="showInterests" class="show" data-type="Interests">Interests</button>
+<button id="showPersonality" class="show" data-type="Personality">Personality</button>
+<button id="showCombat" class="show" data-type="Combat">Combat</button>
 
-<p id="Features">Features: </p>
-<p id="Occupation">Interests: </p>
-<p id="Personality">Personality: </p>
-<p id="Combat">Combat: </p>
+<p>Result:</p>
+<div class="resultRow"><button id="hideRace" class="hide" data-type="Race">X</button><p class="resultStart">Race: </p><p id="Race" class="result"></p></div>
+<div class="resultRow"><button id="hideAge" class="hide" data-type="Age">X</button><p  class="resultStart">Age: </p><p id="Age" class="result"></p></div>
+<div class="resultRow"><button id="hideStarSign" class="hide" data-type="StarSign">X</button><p  class="resultStart">Star Sign: </p><p id="StarSign" class="result"></p></div>
+<div class="resultRow"><button id="hideBloodType" class="hide" data-type="BloodType">X</button><p  class="resultStart">Blood Type: </p><p id="BloodType" class="result"></p></div>
+<div class="resultRow"><button id="hideGender" class="hide" data-type="Gender">X</button><p  class="resultStart">Gender: </p><p id="Gender" class="result"></p></div>
+<div class="resultRow"><button id="hideOrientation" class="hide" data-type="Orientation">X</button><p  class="resultStart">Orientation: </p><p id="Orientation" class="result"></p></div>
+<div class="resultRow"><button id="hideBType" class="hide" data-type="BType">X</button><p  class="resultStart">Body Type: </p><p id="BType" class="result"></p></div>
+<div class="resultRow"><button id="hideFeatures" class="hide" data-type="Features">X</button><p  class="resultStart">Features: </p><p id="Features" class="result"></p></div>
+<div class="resultRow"><button id="hideInterests" class="hide" data-type="Interests">X</button><p  class="resultStart">Interests: </p><p id="Interests" class="result"></p></div>
+<div class="resultRow"><button id="hidePersonality" class="hide" data-type="Personality">X</button><p  class="resultStart">Personality: </p><p id="Personality" class="result"></p></div>
+<div class="resultRow"><button id="hideCombat" class="hide" data-type="Combat">X</button><p  class="resultStart">Combat: </p><p id="Combat" class="result"></p></div>
 <h4 id="Summary"></p>
  <script src="Randgen.js"></script> 
 

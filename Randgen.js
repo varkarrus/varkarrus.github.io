@@ -1,4 +1,4 @@
-function addRace(_name,_height,_weight,_hashair,_haslegs,_hashorns,_haswings,_arms,_randweight){
+function addRace(_name,_height,_weight,_hashair,_haslegs,_hashorns,_haswings,_arms,_tag,_randweight){
 	races.push({
 name:_name,
 height:_height,
@@ -8,6 +8,7 @@ hashorns:_hashorns,
 haslegs:_haslegs,
 haswings:_haswings,
 arms:_arms,
+tag:_tag,
 	randweight:_randweight});	
 }
 function getArrayRandom(array) {
@@ -60,60 +61,75 @@ function randomRange(minmult,maxmult){
 
 function loadRaces() {
 
-	addRace("human",66,134,true,true,false,false,2,0);
-	addRace("elf",70,135,true,true,false,false,2,1);
-	addRace("dwarf",54,105,true,true,false,false,2,1);
-	addRace("orc",70,180,true,true,false,false,2,1);
-	addRace("fairy",3,0.0122,true,true,false,true,2,1);
-	addRace("clone of hollywood superstar Nicholas Cage",72,150,true,true,false,false,2,0.025);
-	addRace("cyclops",267,8580,true,true,false,false,2,0.5);
-	addRace("troll",113,632,true,true,true,false,2,0.5);
-	addRace("gnome",41,40,true,true,false,false,2,1);
-	addRace("catfolk",66,134,true,true,false,false,2,0.5);
-	addRace("wolffolk",66,134,true,true,false,false,2,0.5);
-	addRace("merfolk",78,154,true,false,false,false,2,0.5);
-	addRace("octofolk",66,154,true,false,false,false,2,0.2);
-	addRace("harpy",65,124,true,true,false,true,2,0.5);
-	addRace("centaur",80,1160,true,true,false,false,2,0.5);
-	addRace("dullahan",66,134,true,true,false,false,2,0.5);
-	addRace("drider",78,250,true,true,false,false,2,0.2);
-	addRace("angel",66,144,true,true,false,true,2,0.5);
-	addRace("reaper",66,64,true,true,false,false,2,0.2);
-	addRace("demon",70,180,true,true,true,true,2,1);
-	addRace("oni",90,314,true,true,true,false,2,0.5);
-	addRace("alien",66,134,true,true,false,false,2,0.5);
-	addRace("robot",66,154,false,true,false,false,2,0.5);
-	addRace("golem",66,194,false,true,false,false,2,0.5);
-	addRace("deep one",66,134,true,true,false,false,2,0.2);
-	addRace("mothman",66,114,true,true,false,true,2,0.5);
-	addRace("dragonfolk",76,185,true,true,true,true,2,0.5);
-	addRace("giant",315,14378,true,true,false,false,2,0.5);
-	addRace("titan",660,130000,true,true,false,false,2,0.2);
-	addRace("kitsune",66,134,true,true,false,false,2,0.5);
-	addRace("ettin",182,2860,true,true,false,false,2,0.5);
-	addRace("homunculus",12,2,true,true,false,false,2,0.2);
-	addRace("gorgon",66,134,true,false,false,false,2,0.5);
-	addRace("lizardfolk",66,134,false,true,false,false,2,0.5);
-	addRace("naga",74,790,true,true,false,false,2,0.5); //276 inches long
-	addRace("imp",41,40,true,true,true,true,2,0.5);
-	addRace("bearfolk",76,185,true,true,false,false,2,0.5);
-	addRace("dryad",63,124,true,true,false,false,2,0.5);
-	addRace("naiad",63,124,true,true,false,false,2,0.5);
-	addRace("sylph",63,8.5,true,true,false,true,2,0.5);
-	addRace("alraune",66,234,true,false,false,false,2,0.5);
-	addRace("slime",66,134,true,true,false,false,2,0.5);
-	addRace("goblin",41,40,true,true,false,false,2,1);
-	addRace("<a href='https://en.wikipedia.org/wiki/Tardigrade'>Tardigradekin</a>",66,150,true,false,false,false,6,0.2);
-	addRace("futakuchi-onna",66,130,true,true,false,false,2,0.5);
-	addRace("yuki-onna",66,130,true,true,false,false,2,0.5);
-	addRace("hyakume",70,180,true,true,false,false,2,0.5);
-	addRace("foocubus",66,134,true,true,false,true,2,0.5);
-	addRace("<a href='https://www.youtube.com/watch?v=dtER80sOjX4'>globglogabgalab</a>",66,300,false,false,false,false,2,0.02);
-	addRace("tiefling",70,135,true,true,true,false,2,1);
-	addRace("moleman",41,40,true,true,false,false,2,0.2);
-	addRace("ogre",96,520,true,true,true,false,2,0.75);
-	addRace("antfolk",66,134,false,true,false,false,4,0.5);
-	addRace("beefolk",66,134,true,true,false,true,4,0.5);
+	addRace("human",66,134,true,true,false,false,2,"mundane",0);
+	addRace("elf",70,135,true,true,false,false,2,"fantasy,DND",1);
+	addRace("dwarf",54,105,true,true,false,false,2,"fantasy,DND",1);
+	addRace("orc",70,180,true,true,false,false,2,"fantasy,DND",1);
+	addRace("fairy",3,0.0122,true,true,false,true,2,"fantasy",1);
+	addRace("clone of hollywood superstar Nicholas Cage",72,150,true,true,false,false,2,"joke",0.005);
+	addRace("cyclops",267,8580,true,true,false,false,2,"fantasy",0.5);
+	addRace("troll",113,632,true,true,true,false,2,"fantasy",0.5);
+	addRace("gnome",41,40,true,true,false,false,2,"fantasy",1);
+	addRace("catfolk",66,134,true,true,false,false,2,"anthro",0.5);
+	addRace("wolffolk",66,134,true,true,false,false,2,"anthro",0.5);
+	addRace("merfolk",78,184,true,false,false,false,2,"fantasy,anthro",0.5);
+	addRace("octofolk",66,154,true,false,false,false,2,"fantasy",0.2);
+	addRace("harpy",65,124,true,true,false,true,2,"fantasy,DND",0.5);
+	addRace("centaur",80,1160,true,true,false,false,2,"fantasy,DND",0.5);
+	addRace("dullahan",66,134,true,true,false,false,2,"fantasy",0.5);
+	addRace("drider",78,250,true,true,false,false,2,"DND",0.2);
+	addRace("angel",66,144,true,true,false,true,2,"fantasy",0.5);
+	addRace("reaper",66,64,true,true,false,false,2,"fantasy",0.2);
+	addRace("demon",70,180,true,true,true,true,2,"fantasy",1);
+	addRace("oni",90,314,true,true,true,false,2,"fantasy",0.5);
+	addRace("alien",66,134,true,true,false,false,2,"scifi",0.5);
+	addRace("robot",66,154,false,true,false,false,2,"scifi",0.5);
+	addRace("golem",66,194,false,true,false,false,2,"fantasy",0.5);
+	addRace("deep one",66,134,true,true,false,false,2,"fantasy",0.2);
+	addRace("mothman",66,114,true,true,false,true,2,"fantasy",0.5);
+	addRace("dragonborn",76,185,true,true,true,true,2,"anthro,fantasy,DND",0.5);
+	addRace("giant",315,14378,true,true,false,false,2,"fantasy,DND",0.5);
+	addRace("titan",660,130000,true,true,false,false,2,"fantasy",0.2);
+	addRace("kitsune",66,134,true,true,false,false,2,"fantasy,anthro",0.5);
+	addRace("ettin",182,2860,true,true,false,false,2,"fantasy",0.5);
+	addRace("homunculus",12,2,true,true,false,false,2,"fantasy",0.2);
+	addRace("gorgon",66,134,true,false,false,false,2,"fantasy",0.5);
+	addRace("lizardfolk",66,134,false,true,false,false,2,"anthro,DND",0.5);
+	addRace("naga",74,790,true,true,false,false,2,"fantasy",0.5); //276 inches long
+	addRace("imp",41,40,true,true,true,true,2,"fantasy",0.5);
+	addRace("bearfolk",76,185,true,true,false,false,2,"anthro",0.5);
+	addRace("dryad",63,124,true,true,false,false,2,"fantasy",0.5);
+	addRace("naiad",63,124,true,true,false,false,2,"fantasy",0.5);
+	addRace("sylph",63,8.5,true,true,false,true,2,"fantasy",0.5);
+	addRace("alraune",66,234,true,false,false,false,2,"fantasy",0.5);
+	addRace("slime",66,134,true,true,false,false,2,"fantasy",0.5);
+	addRace("goblin",41,40,true,true,false,false,2,"fantasy,DND",1);
+	addRace("<a href='https://en.wikipedia.org/wiki/Tardigrade'>tardigradekin</a>",66,150,true,false,false,false,6,"anthro",0.2);
+	addRace("futakuchi-onna",66,130,true,true,false,false,2,"fantasy",0.5);
+	addRace("yuki-onna",66,130,true,true,false,false,2,"fantasy",0.5);
+	addRace("hyakume",70,180,true,true,false,false,2,"fantasy",0.5);
+	addRace("foocubus",66,134,true,true,false,true,2,"fantasy",0.5);
+	addRace("<a href='https://www.youtube.com/watch?v=dtER80sOjX4'>globglogabgalab</a>",66,300,false,false,false,false,2,"joke",0.005);
+	addRace("moleman",41,40,true,true,false,false,2,"anthro",0.2);
+	addRace("ogre",96,520,true,true,true,false,2,"fantasy",0.75);
+	addRace("antfolk",66,134,false,true,false,false,4,"anthro",0.5);
+	addRace("beefolk",66,134,true,true,false,true,4,"anthro",0.5);
+	addRace("tiefling",70,135,true,true,true,false,2,"DND",1);
+	addRace("aasimar",73,200,true,true,false,false,2,"DND",0.5);
+	addRace("goliath",90,310,true,true,false,false,2,"DND",0.5);
+	addRace("aarakocra",60,90,false,true,false,true,2,"DND",0.5);
+	addRace("bugbear",84,275,true,true,false,false,2,"DND",0.5);
+	addRace("firbolg",90,270,true,true,false,false,2,"DND",0.5);
+	addRace("genasi",66,134,true,true,false,false,2,"DND",0.5);
+	addRace("gith",60,100,true,true,false,false,2,"DND",0.5);
+	addRace("halfling",36,40,true,true,false,false,2,"fantasy,DND",0.5);
+	addRace("hobgoblin",66,134,true,true,false,false,2,"DND",0.5);
+	addRace("kenku",60,75,false,true,false,false,2,"DND,anthro",0.5);
+	addRace("kobold",26,40,false,true,false,false,2,"DND",0.5);
+	addRace("minotaur",78,185,true,true,true,false,2,"DND,anthro",0.5);
+	addRace("tortle",66,450,false,true,false,false,2,"DND,anthro",0.25);
+	addRace("triton",64,130,true,true,false,false,2,"DND",0.25);
+	addRace("yuan-ti pureblood",66,134,true,true,false,false,2,"DND",0.25);
 
 
 }
@@ -167,12 +183,12 @@ function loadHeightWeightTypes(){
 
 function loadFeatures(){
 	features.push({name:getRandom(["facial scar","scars","heavily scarred","burn marks","lightning scars"]),randweight:1,vis:1,unnatural:false});
-	features.push({name:getRandom(["old","young"]),randweight:2,vis:0,unnatural:false});
 	if(race.haslegs==true){
 	features.push({name:getRandom(["missing arm","missing leg","uses a wheelchair","uses a cane"]),randweight:0.2,vis:0,unnatural:false});}
 	else{
 		features.push({name:"missing arm",randweight:1,vis:0,unnatural:false});
 	}
+	
 	features.push({name:"missing a head",randweight:0.3,vis:0,unnatural:true});
 	features.push({name:"extra arms",randweight:0.75,vis:0,unnatural:true});
 	features.push({name:getRandom(["shoulder tattoo","face tattoo","tattoo sleeve","back tattoo"]),randweight:1,vis:1,unnatural:false});
@@ -214,25 +230,25 @@ function loadFeatures(){
 }
 
 function loadAddedDetails(){
-	details.push({name:"magic user",randweight:1,unnatural:true,combat:true});
-	details.push({name:"cyborg",randweight:0.8,unnatural:false,combat:false});
-	details.push({name:"ghost",randweight:0.8,unnatural:false,combat:false});
-	details.push({name:"undead",randweight:0.8,unnatural:false,combat:false});
-	details.push({name:"lich",randweight:0.2,unnatural:false,combat:true});
-	details.push({name:"vampire",randweight:0.5,unnatural:false,combat:true});
-	details.push({name:"psionic",randweight:0.2,unnatural:false,combat:true});
-	details.push({name:"mutant",randweight:0.8,unnatural:true,combat:false});
-	details.push({name:"genetic experiment",randweight:0.2,unnatural:false,combat:true});
-	details.push({name:"cursed",randweight:0.4,unnatural:true,combat:false});
-	details.push({name:"has a demon pact",randweight:0.4,unnatural:true,combat:false});
-	details.push({name:"immortal",randweight:0.4,unnatural:false,combat:false});
-	details.push({name:"demigod",randweight:0.2,unnatural:true,combat:true});
-	details.push({name:"clairvoyant",randweight:0.2,unnatural:false,combat:false});
-	details.push({name:"possessed",randweight:0.2,unnatural:true,combat:false});
-	details.push({name:"famous",randweight:1,unnatural:false,combat:false});
-	details.push({name:"royalty",randweight:1,unnatural:false,combat:false});
-	details.push({name:"superpowered",randweight:1,unnatural:true,combat:true});
-	details.push({name:"infected",randweight:0.2,unnatural:true,combat:true});
+	details.push({name:"magic user",randweight:1,unnatural:true,combat:true,tag:"fantasy"});
+	details.push({name:"cyborg",randweight:0.8,unnatural:false,combat:false,tag:"scifi"});
+	details.push({name:"ghost",randweight:0.8,unnatural:false,combat:false,tag:"fantasy"});
+	details.push({name:"undead",randweight:0.8,unnatural:false,combat:false,tag:"fantasy"});
+	details.push({name:"lich",randweight:0.2,unnatural:false,combat:true,tag:"fantasy"});
+	details.push({name:"vampire",randweight:0.5,unnatural:false,combat:true,tag:"fantasy"});
+	details.push({name:"psionic",randweight:0.2,unnatural:false,combat:true,tag:""});
+	details.push({name:"mutant",randweight:0.8,unnatural:true,combat:false,tag:"scifi"});
+	details.push({name:"genetic experiment",randweight:0.2,unnatural:false,combat:true,tag:"scifi"});
+	details.push({name:"cursed",randweight:0.4,unnatural:true,combat:false,tag:"fantasy"});
+	details.push({name:"has a demon pact",randweight:0.4,unnatural:true,combat:false,tag:"fantasy"});
+	details.push({name:"immortal",randweight:0.4,unnatural:false,combat:false,tag:""});
+	details.push({name:"demigod",randweight:0.2,unnatural:true,combat:true,tag:"fantasy"});
+	details.push({name:"clairvoyant",randweight:0.2,unnatural:false,combat:false,tag:"fantasy"});
+	details.push({name:"possessed",randweight:0.2,unnatural:true,combat:false,tag:"fantasy"});
+	details.push({name:"famous",randweight:1,unnatural:false,combat:false,tag:"mundane"});
+	details.push({name:"royalty",randweight:1,unnatural:false,combat:false,tag:"mundane"});
+	details.push({name:"superpowered",randweight:1,unnatural:true,combat:true,tag:""});
+	details.push({name:"infected",randweight:0.2,unnatural:true,combat:true,tag:""});
 }
 
 function loadJobs(){
@@ -290,10 +306,7 @@ function loadJobs(){
 	jobs.push({name:"gameshow host",randweight:0.1,combat:false});
 	jobs.push({name:"biostatistician",randweight:0.1,combat:false});
 
-	
-	if(featurestring.includes("old")){
-		jobs.push({name:"pensioner",randweight:10,combat:false});
-	}
+
 	
 }
 
@@ -361,7 +374,7 @@ function loadTraits(){
 	traits.push({name1:"trusting",name2:"distrustful",randweight:1})
 	traits.push({name1:"loyal",name2:"untrustworthy",randweight:1})
 	traits.push({name1:"romantic",name2:"indifferent",randweight:1})
-	if(young==false){traits.push({name1:"flirty",name2:"chaste",randweight:1})}
+	if(age.cat>=3){traits.push({name1:"flirty",name2:"chaste",randweight:1})}
 	traits.push({name1:"joyful",name2:"depressed",randweight:1})
 }
 
@@ -688,20 +701,77 @@ function listFixer(string){
 return string;
 }
 
+function getRace(){
+	var temprace;
+
+	var ok=false;
+	do{
+	ok=false;
+	temprace=getArrayRandom(races)
+	if(temprace.tag.includes("fantasy") && (raceValue == "fantasy" || raceValue == "fanthro" || raceValue == "fantasyNoDND"|| raceValue == "fanthroNoDND")){ok=true}
+	if(temprace.tag.includes("DND") && (raceValue == "DND" || raceValue == "fantasy" || raceValue=="fanthro")){ok=true}
+	if(temprace.tag.includes("scifi") && raceValue == "scifi"){ok=true}
+	if(temprace.tag.includes("anthro") && (raceValue == "anthro" || raceValue == "fanthro" || raceValue == "fanthroNoDND")){ok=true}
+	if(temprace.tag.includes("joke")){ok=true}
+	if(raceValue=="all"){ok=true}
+	}while(ok==false)
+		
+	return temprace;
+}
+
+function generateBloodType(){
+	var rn = race.name
+	var bloodtypes=[];
+	if(rn.includes("antfolk")||rn.includes("beefolk")||rn.includes("fairy")||rn.includes("tardigradekin")){
+	bloodtypes.push({name:"ichor",randweight:1})
+		}
+	if(rn.includes("robot")){
+		bloodtypes.push({name:"battery power",randweight:3})
+		bloodtypes.push({name:"uranium",randweight:1})
+		bloodtypes.push({name:"oil",randweight:1})
+		bloodtypes.push({name:"diesel",randweight:1})
+		bloodtypes.push({name:"nanites",randweight:0.25})
+		bloodtypes.push({name:"solar power",randweight:0.25})
+		bloodtypes.push({name:"steam power",randweight:0.25})
+	}
+	if(rn.includes("alien")){
+		bloodtypes.push({name:"acid",randweight:2})
+		bloodtypes.push({name:"ichor",randweight:1})
+		bloodtypes.push({name:"green",randweight:1})
+		bloodtypes.push({name:"plasma",randweight:1})
+		bloodtypes.push({name:"goo",randweight:1})
+	}
+	if(rn.includes("golem")){
+		bloodtypes.push({name:"none",randweight:1})
+	}
+	if(bloodtypes.length==0){
+		bloodtypes.push({name:"A+",randweight:4})
+		bloodtypes.push({name:"A-",randweight:4})
+		bloodtypes.push({name:"AB+",randweight:3})
+		bloodtypes.push({name:"AB-",randweight:3})
+		bloodtypes.push({name:"B+",randweight:2})
+		bloodtypes.push({name:"B-",randweight:2})
+		bloodtypes.push({name:"O+",randweight:0.5})
+		bloodtypes.push({name:"O-",randweight:0.5})
+	}
+	var tempbt = getArrayRandom(bloodtypes)
+	return tempbt.name
+}
+
 function generateRace(){
-	if (Math.random() < 0.5) {
+	if ((Math.random() < 0.5 || document.getElementById("raceMenuDiv").style.display=="none" || raceValue=="humanOnly") && raceValue !="anthro") {
   race = races[0];
 } else {
 	
-	if(Math.random()<0.8){
-  race = getArrayRandom(races);
+	if(Math.random()<0.8 || document.getElementById("noHybrids").checked){
+	race = getRace()
   
 	}
 	else{
-		var race1 = getArrayRandom(races);
+		var race1 = getRace();
 		var race2;
-		if(Math.random()>0.75){
-		do{race2 = getArrayRandom(races)}while(race2==race1)
+		if(Math.random()>0.75 || raceValue =="anthro"){
+		do{race2 = getRace()}while(race2==race1)
 		}else{race2 = races[0];}
 	
 		race.name = "half-"+race1.name; if(race2.name!="human"){race.name+=" half-"+race2.name}
@@ -714,8 +784,8 @@ function generateRace(){
 		if(Math.random()>0.5){race.arms = race1.arms}else{race.arms=race2.arms}
 	}
 	
-  };
-	if (race.name.includes("demon")){unnatural=true;}
+  }
+	if (race.name.includes("demon")||race.name.includes("alien")){unnatural=true;}
 }
 
 function stringnumber(num){
@@ -736,8 +806,9 @@ function stringnumber(num){
 
 function generateCombat(){
 	string=""
+	if(document.getElementById("alwaysCombat").checked){combat=true;}
 	if (combat==true || Math.random()*100>70){
-		if(occupationstring.includes("grade schooler")==false && occupationstring.includes("preschooler")==false){
+		if(age.cat>=3){
 		string="uses "
 		if(Math.random()*100>65 || abilities.length==0){
 		
@@ -813,7 +884,9 @@ function generatePersonality(){
 	
 	do{t = getArrayRandom(traits)}while(t.name2=="")
 	string+=t.name2;
-
+	if (document.getElementById("MBTI").checked){
+		string+=" ("+generateMBTI()+")"
+	}
 	return string;
 }
 
@@ -823,12 +896,24 @@ function generateFeatures(){
 	var vis = 0;
 	var addedDetail = ""
 	var featurecount = Math.round(randomRange(1,2));
+	if (nounnatural==false){
 	if(Math.random()*100>60){
 		var t = getArrayRandom(details)
 		addedDetail=t.name
-		unnatural=t.unnatural
+		if(t.unnatural==true){unnatural=true}
 		if(t.combat==true){combat=true}
 		}
+	}
+	else{
+		unnatural=false;
+		if(Math.random()*100>95){
+			var t;
+			do {t = getArrayRandom(details)}while(t.tag.includes("mundane")==false)
+			addedDetail=t.name
+			if(t.combat==true){combat=true}
+		}
+	}
+	
 		if(race.name.includes("futakuchi-onna")==false){
 	if(Math.random()*100>70 && race.hashair==true){featurecount--;hair=generateHair(true);}
 		if(Math.random()*100>90 && race.hashair==false){featurecount--;hair=generateHair(false)+ " (wig)"}}
@@ -846,7 +931,6 @@ function generateFeatures(){
 		if(tempfeature.name.includes("hair")==false || race.hashair==true){
 		if(string!=""){string+=", ";}
 		string+=tempfeature.name;
-		if(tempfeature.name == "young"){young=true;}
 		features.splice(features.indexOf(tempfeature),1);
 		}else{i--;}
 	}
@@ -870,9 +954,15 @@ function generateOccupation(){
 	var string="";
 	var jobtemp;
 	var hobbytemp;
-	if (Math.random()*100 > 60 || young==true){
+	if (Math.random()*100 > 60 || age.cat>=4){
 	var JobHobbyList = [];
-	if(young==false){
+	if(age.cat>=4){
+		if(age.cat==4){
+			JobHobbyList.push({name:"college student",combat:false,randweight:2.5});
+			JobHobbyList.push({name:"university student",combat:false,randweight:2.5});}
+		if(age.cat>6){
+			JobHobbyList.push({name:"pensioner",combat:false,randweight:5});}
+			
 	for (var i =0;i<jobs.length;i++){
 		JobHobbyList.push({name:jobs[i].name,combat:jobs[i].combat,randweight:jobs[i].randweight});
 	}
@@ -885,19 +975,13 @@ function generateOccupation(){
 			if(jobTemp.combat==true){combat=true}
 	}
 	else{
-		JobHobbyList.push({name:"university student",combat:false,randweight:1});
-		JobHobbyList.push({name:"college student",combat:false,randweight:1});
-		JobHobbyList.push({name:"high schooler",combat:false,randweight:1});
-		JobHobbyList.push({name:"grade schooler",combat:false,randweight:1});
-		JobHobbyList.push({name:"preschooler",combat:false,randweight:1});
-			jobTemp = getArrayRandom(JobHobbyList);
-		switch (jobTemp.name){
-			case "university student": heightmult*=0.95; break;
-			case "college student": heightmult*=0.95; break;
-			case "highschooler": heightmult*=randomRange(0.82,0.95); break;
-			case "grade schooler": heightmult*=randomRange(0.75,0.85); sorient = "-"; break;
-			case "preschooler": heightmult*=0.6; sorient = "-"; break;
-		}
+		if(age.cat==0){JobHobbyList.push({name:"preschooler",combat:false,randweight:1})};
+		if(age.cat==1 || age.cat==2){JobHobbyList.push({name:"grade schooler",combat:false,randweight:1})};
+		if(age.cat==3){
+			JobHobbyList.push({name:"high schooler",combat:false,randweight:1})
+			JobHobbyList.push({name:"truant",combat:false,randweight:0.05})};
+		JobHobbyList.push({name:"homeschooled",combat:false,randweight:0.15})
+		jobTemp = getArrayRandom(JobHobbyList);
 	}
 
 
@@ -982,15 +1066,15 @@ function randGender(){
 	var value = Math.random()*100;
 	if (value > 90){return "nonbinary";}
 	
-	var tempgender="";
-	if(Math.random()*100>75){tempgender="trans ";}
+	var cis = "";
+	if(document.getElementById("genderDetails").checked){
+	if(Math.random()*100>50){cis="trans "}else{cis="cis "}
+	
+	}
 	
 	
-	value = Math.random()*100;
-	if(value > 50){tempgender+="male";}
-	else{tempgender+="female";}
-	
-	return tempgender;
+	if(Math.random()*100>50){return cis+"male";}
+	else{return cis+"female";}
 }
 function gendIs(){
 	if(gender.includes("male")){return "he is";}
@@ -1003,18 +1087,90 @@ function gendHas(){
 	return "they have";
 }
 
+function generateAge(){
+	var ages=[];
+	ages.push({name:"toddler",cat:0,randweight:0.2})
+	ages.push({name:"child",cat:1,randweight:0.5})
+	ages.push({name:"pre-teen",cat:2,randweight:0.7})
+	ages.push({name:"teenager",cat:3,randweight:1})
+	ages.push({name:"young adult",cat:4,randweight:2})
+	ages.push({name:"middle-aged",cat:5,randweight:1.5})
+	ages.push({name:"old",cat:6,randweight:0.5})
+	ages.push({name:"elderly",cat:7,randweight:0.2})
+	
+	var tempage = getArrayRandom(ages)
+	return tempage
+}
+
 function generateSummary(){
 	var string="Your character is a "+sorient+" "+gender+" "+race.name;
 	string+=gendHas()+featurestring
 	document.getElementById("Summary").innerHTML = string;
 }
 function randOrientation(){
+	if(age.cat<3){return"--"}
 	if (gender=="nonbinary"){return getRandom(["androsexual","gynosexual","bi","ace"]);}
 	else{return getRandom(["straight","gay","bi","ace"]);}
 }
+
+function generateMBTI(){
+	var MBTI =""
+	if(Math.random()*100>50){MBTI+="E"}else{MBTI+="I"}
+	if(Math.random()*100>50){MBTI+="S"}else{MBTI+="N"}
+	if(Math.random()*100>50){MBTI+="T"}else{MBTI+="F"}
+	if(Math.random()*100>50){MBTI+="J"}else{MBTI+="P"}
+	return MBTI;
+}
+
+function Hide(value){
+	document.getElementById(value).parentElement.style.display="none"
+	document.getElementById("show"+value).style.display="inline"
+	if(value=="Race"){
+		document.getElementById("raceMenuDiv").style.display="none"
+		document.getElementById("noHybridsDiv").style.display="none"
+	}
+	if(value=="Gender"){
+		document.getElementById("genderDetailsDiv").style.display="none"
+	}
+	if(value=="Features"){
+		document.getElementById("noUnnaturalDiv").style.display="none"
+	}
+	if(value=="Personality"){
+		document.getElementById("MBTIDiv").style.display="none"
+	}
+	if(value=="Combat"){
+		document.getElementById("alwaysCombatDiv").style.display="none"
+	}
+}
+function Show(value){
+	document.getElementById(value).parentElement.style.display="block"
+	document.getElementById("show"+value).style.display="none"
+	if(value=="Race"){
+		document.getElementById("raceMenuDiv").style.display="inline"
+		document.getElementById("noHybridsDiv").style.display="inline"
+	}
+	if(value=="Gender"){
+		document.getElementById("genderDetailsDiv").style.display="inline"
+	}
+		if(value=="Features"){
+		document.getElementById("noUnnaturalDiv").style.display="inline"
+	}
+	if(value=="Personality"){
+		document.getElementById("MBTIDiv").style.display="inline"
+	}
+	if(value=="Combat"){
+		document.getElementById("alwaysCombatDiv").style.display="inline"
+	}
+}
+
+function generateStarSign(){
+	if(Math.random()*100>99){return "ophiuchus"}
+	return getRandom(["aries","taurus","gemini","cancer","leo","virgo","scorpio","saggitarius","capricorn","aquarius","pisces"])
+	
+}
+
 var unnatural = false;
 var combat = false;
-var young = false;
 var heighttypes=[];
 var weighttypes=[];
 var features=[];
@@ -1029,13 +1185,26 @@ var race=({name:"",height:0,weight:0,haslegs:false,hashair:false,hashorns:false,
 var featurestring;
 var sorient;
 var arms = 2;
+var nocombat = false;
+var noorient = false;
+var humanonly = false;
+var nounnatural = false;
+var raceValue="";
+var age = "";
+
+function Init(){
+
+}
 
 function generateChar(){
 	//do{
+		
+	var e = document.getElementById("raceMenu")
+	raceValue = e.options[e.selectedIndex].value
+	
 arms=2;
 unnatural = false;
 combat = false;
-young = false;
 heighttypes=[];
 weighttypes=[];
 features=[];
@@ -1052,9 +1221,12 @@ weightmult=1;
 bodytype="";
 loadHeightWeightTypes();
 
+
 gender=randGender();
-sorient=randOrientation();
+
 featurestring="";
+
+nounnatural = document.getElementById("noUnnatural").checked
 
 
 loadHobbies();
@@ -1069,25 +1241,71 @@ featurestring = generateFeatures();
 loadJobs();
 loadTraits();
 randBodyType();
+
+
+
+
+document.getElementById("Race").innerHTML = race.name;
+
+if(document.getElementById("showAge").style.display=="none"){
+age=generateAge();
+document.getElementById("Age").innerHTML = age.name;}
+else{age={name:"young adult",cat:4,randweight:1};document.getElementById("Age").innerHTML = age.name;}
+
+sorient=randOrientation();
 occupationstring = generateOccupation();
 loadCombat();
 
-document.getElementById("Race").innerHTML = "Race: "+race.name;
-document.getElementById("Gender").innerHTML = "Gender: "+gender;
-document.getElementById("Orientation").innerHTML = "Orientation: "+sorient;
+
+document.getElementById("StarSign").innerHTML = generateStarSign();
+document.getElementById("Gender").innerHTML = gender;
+
+document.getElementById("Orientation").innerHTML = sorient;
 
 
 var combatstring = generateCombat();
-document.getElementById("Features").innerHTML = "Features: "+featurestring;
-document.getElementById("Occupation").innerHTML = "Interests: "+occupationstring;
+document.getElementById("Features").innerHTML = featurestring;
+document.getElementById("Interests").innerHTML = occupationstring;
+
+if(age.cat==0){heightmult*=randomRange(0.48,0.66)}
+if(age.cat==1){heightmult*=randomRange(0.66,0.82)}
+if(age.cat==2){heightmult*=randomRange(0.82,0.93)}
+if(age.cat==3){heightmult*=randomRange(0.93,1)}
 weightmult *= Math.pow(heightmult,2.7);
+
 if(featurestring.includes("ghost")||featurestring.includes("weightless")){weightmult=0;}
-document.getElementById("BType").innerHTML = "Body Type: "+bodytype+" ("+stringHeight(race.height*heightmult)+", "+stringWeight(race.weight*weightmult)+((combatstring.includes("sizeshifting") || combatstring.includes("shapeshifting"))?", variable":"")+")";
-document.getElementById("Personality").innerHTML = "Personality: "+generatePersonality();
-document.getElementById("Combat").innerHTML = "Combat: "+combatstring;
+document.getElementById("BType").innerHTML = bodytype+" ("+stringHeight(race.height*heightmult)+", "+stringWeight(race.weight*weightmult)+((combatstring.includes("sizeshifting") || combatstring.includes("shapeshifting"))?", variable":"")+")";
+
+document.getElementById("Personality").innerHTML = generatePersonality();
+document.getElementById("BloodType").innerHTML = generateBloodType();
+document.getElementById("Combat").innerHTML = combatstring;
 //}while(document.getElementById("BType").innerHTML.includes("variable")==false)
 //generateSummary();
 }
 
-document.getElementById("Summary").addEventListener("load", generateChar());
+document.getElementById("generate").addEventListener("load",generateChar());
 document.getElementById("generate").onclick = function() {generateChar()};
+
+var hideArray = document.getElementsByClassName("hide")
+for (index = 0; index < hideArray.length; ++index) {
+	hideArray[index].onclick = function(){Hide(this.getAttribute("data-type"))};
+}
+
+var showArray = document.getElementsByClassName("show")
+for (index = 0; index < showArray.length; ++index) {
+
+	showArray[index].onclick = function(){Show(this.getAttribute("data-type"))};
+}
+
+Hide("BloodType")
+Hide("Orientation")
+Hide("Age")
+Hide("StarSign")
+/*document.getElementById("hideRace").onclick = function() {Hide("Race")};
+document.getElementById("hideGender").onclick = function() {hideGender()};
+document.getElementById("hideAge").onclick = function() {hideAge()};
+
+
+document.getElementById("showRace").onclick = function() {showRace()};
+document.getElementById("showGender").onclick = function() {showGender()};
+document.getElementById("showAge").onclick = function() {showAge()};*/
