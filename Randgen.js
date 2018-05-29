@@ -1298,7 +1298,6 @@ for (index = 0; index < showArray.length; ++index) {
 }
 
 Hide("BloodType")
-Hide("Orientation")
 Hide("Age")
 Hide("StarSign")
 /*document.getElementById("hideRace").onclick = function() {Hide("Race")};
